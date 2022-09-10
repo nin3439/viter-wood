@@ -1,0 +1,295 @@
+/* stylelint-disable */
+
+// Additional types apart from primary
+$button-types: 'success', 'danger';
+
+@mixin button-small {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  padding: 4px 8px;
+  @apply rounded h-6;
+
+  &.p-button-icon-only {
+    width: 24px;
+  }
+
+  &.p-button-icon-left {
+    margin-right: 0.625rem;
+  }
+
+  &.p-button-icon-right {
+    margin-left: 0.625rem;
+  }
+
+  .p-button-icon {
+    font-size: 0.75rem;
+  }
+}
+
+@mixin button-large {
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  padding: 12px 20px;
+
+  @apply h-12 rounded-lg;
+
+  &.p-button-icon-only {
+    width: 3rem;
+  }
+
+  &.p-button-icon-left {
+    margin-right: 1.5rem;
+  }
+
+  &.p-button-icon-right {
+    margin-left: 1.5rem;
+  }
+
+  .p-button-icon {
+    font-size: 1.125rem;
+  }
+}
+
+@mixin button-outlined {
+  color: #282828;
+  @apply border-gray-300 bg-white;
+
+  &:enabled {
+    color: #000000;
+    &:hover {
+      @apply bg-black-5 border-gray-600;
+    }
+    &:active {
+      @apply bg-black-10 border-gray-800;
+    }
+  }
+
+  &[disabled] {
+    color: #8c8c8c;
+    @apply bg-black-5;
+  }
+
+  &.p-button-plain {
+    color: #605e5c;
+    border-color: #605e5c;
+
+    &:enabled {
+      &:hover {
+        background-color: #f3f2f1;
+        color: #605e5c;
+      }
+
+      &:active {
+        background-color: #edebe9;
+        color: #605e5c;
+      }
+    }
+  }
+}
+
+.p-button {
+  color: #ffffff;
+  background-color: #000000;
+  border: 1px solid #000000;
+  padding: 8px 16px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+
+  @apply h-9 rounded-md;
+
+  // States
+  &:enabled {
+    color: #ffffff;
+    &:hover {
+      background-color: #282828;
+      border-color: #282828;
+    }
+    &:active {
+      background-color: #505050;
+      border-color: #505050;
+    }
+  }
+
+  &:focus {
+    outline: 0 none;
+    outline-offset: 0;
+  }
+
+  &[disabled] {
+    color: rgba(255, 255, 255, 0.6);
+    background-color: #505050;
+    border-color: #505050;
+    opacity: 1;
+    cursor: not-allowed;
+  }
+
+  // Button types
+  &.p-button-link {
+    background-color: transparent;
+    border: transparent;
+
+    &:enabled {
+      &:hover {
+        background-color: transparent;
+        border-color: transparent;
+      }
+
+      &:focus {
+        background-color: transparent;
+        border-color: transparent;
+      }
+
+      &:active {
+        background-color: transparent;
+        border-color: transparent;
+      }
+    }
+  }
+
+  &.p-button-icon-only {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+
+    .p-button-icon-left,
+    .p-button-icon-right {
+      margin: 0;
+    }
+
+    &.p-button-rounded {
+      border-radius: 50%;
+    }
+  }
+
+  &.p-button-danger {
+    @apply bg-danger-500;
+  }
+
+  &.p-button-outlined {
+    @include button-outlined;
+  }
+
+  &.p-button-sm {
+    @include button-small;
+  }
+
+  &.p-button-lg {
+    @include button-large;
+  }
+
+  // Inner button elements
+  .p-button-icon-left {
+    margin-right: 1.125rem;
+  }
+
+  .p-button-icon-right {
+    margin-left: 1.125rem;
+  }
+
+  .p-badge {
+    margin-left: 1.125rem;
+    min-width: 1rem;
+    height: 1rem;
+    line-height: 1rem;
+    background-color: var(--color-white);
+  }
+
+  &.p-button-text {
+    @apply bg-transparent border-transparent text-gray-600;
+    &:disabled {
+      @apply text-gray-600 bg-black-5 border-black-5;
+    }
+    &:hover {
+      @apply text-black bg-black-5 border-transparent;
+      &:disabled {
+        cursor: not-allowed;
+        @apply text-gray-600 bg-black-5 border-black-5;
+      }
+    }
+    &:active {
+      @apply text-black bg-black-10 border-transparent;
+    }
+  }
+}
+
+.p-fileupload {
+  &.p-button-sm .p-button {
+    @include button-small;
+  }
+  &.p-button-lg .p-button {
+    @include button-large;
+  }
+  &.p-button-outlined .p-button {
+    @include button-outlined;
+  }
+}
+
+@each $type in $button-types {
+  .p-button.p-button-#{$type},
+  .p-buttonset.p-button-#{$type} > .p-button,
+  .p-splitbutton.p-button-#{$type} > .p-button {
+    @apply text-white bg-#{$type}-600 border-#{$type}-600 border;
+  }
+
+  .p-button.p-button-#{$type}[disabled] {
+    @apply text-white-60 bg-#{$type}-700;
+    opacity: 1;
+  }
+
+  .p-button.p-button-#{$type}:enabled:hover,
+  .p-buttonset.p-button-#{$type} > .p-button:enabled:hover,
+  .p-splitbutton.p-button-#{$type} > .p-button:enabled:hover {
+    @apply text-white bg-#{$type}-700 border-#{$type}-700;
+  }
+
+  .p-button.p-button-#{$type}:enabled:active,
+  .p-buttonset.p-button-#{$type} > .p-button:enabled:active,
+  .p-splitbutton.p-button-#{$type} > .p-button:enabled:active {
+    @apply text-white bg-#{$type}-800 border-#{$type}-800 border;
+  }
+
+  .p-button.p-button-#{$type}.p-button-outlined,
+  .p-buttonset.p-button-#{$type} > .p-button.p-button-outlined,
+  .p-splitbutton.p-button-#{$type} > .p-button.p-button-outlined {
+    @apply text-#{$type}-600 bg-white border-gray-300 border;
+  }
+
+  .p-button.p-button-#{$type}.p-button-outlined:enabled:hover,
+  .p-buttonset.p-button-#{$type} > .p-button.p-button-outlined:enabled:hover,
+  .p-splitbutton.p-button-#{$type} > .p-button.p-button-outlined:enabled:hover {
+    @apply text-#{$type}-700 bg-black-5 border-#{$type}-700 border;
+  }
+
+  .p-button.p-button-#{$type}.p-button-outlined:enabled:active,
+  .p-buttonset.p-button-#{$type} > .p-button.p-button-outlined:enabled:active,
+  .p-splitbutton.p-button-#{$type} > .p-button.p-button-outlined:enabled:active {
+    @apply text-#{$type}-800 bg-black-10 border-#{$type}-800 border;
+  }
+
+  .p-button.p-button-outlined {
+    &.p-button-#{$type}[disabled] {
+      opacity: 1;
+      @apply text-#{$type}-600-60 bg-black-5;
+    }
+  }
+
+  .p-button.p-button-#{$type}.p-button-text,
+  .p-buttonset.p-button-#{$type} > .p-button.p-button-text,
+  .p-splitbutton.p-button-#{$type} > .p-button.p-button-text {
+    @apply text-#{$type}-600 border-transparent bg-transparent;
+  }
+
+  .p-button.p-button-#{$type}.p-button-text:enabled:hover,
+  .p-buttonset.p-button-#{$type} > .p-button.p-button-text:enabled:hover,
+  .p-splitbutton.p-button-#{$type} > .p-button.p-button-text:enabled:hover {
+    @apply text-#{$type}-700 bg-black-5 border-transparent;
+  }
+
+  .p-button.p-button-#{$type}.p-button-text:enabled:active,
+  .p-buttonset.p-button-#{$type} > .p-button.p-button-text:enabled:active,
+  .p-splitbutton.p-button-#{$type} > .p-button.p-button-text:enabled:active {
+    @apply text-#{$type}-800 border-transparent bg-black-10;
+  }
+}

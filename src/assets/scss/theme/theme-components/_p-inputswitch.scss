@@ -1,0 +1,86 @@
+/* stylelint-disable */
+.p-field-inputswitch {
+  &.p-error .p-inputswitch-slider,
+  &.p-invalid .p-inputswitch-slider {
+    border-color: var(--color-danger-500);
+  }
+
+  &._twin > label {
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--color-gray-600);
+    transition: color 0.2s;
+
+    &._active {
+      pointer-events: none;
+    }
+  }
+}
+
+.p-inputswitch {
+  width: 36px;
+  height: 20px;
+
+  .p-inputswitch-slider {
+    background-color: var(--color-white);
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    border-radius: 10px;
+    border: 1px solid var(--color-gray-200);
+
+    &::before {
+      width: 14px;
+      height: 14px;
+      margin-top: -7px;
+      left: 2px;
+      border-radius: 50%;
+      transition-duration: 0.2s;
+    }
+  }
+
+  &.p-inputswitch-checked {
+
+    .p-inputswitch-slider {
+
+      &::before {
+        background: var(--color-white);
+        transform: translateX(16px);
+      }
+    }
+
+    &:not(.p-disabled):hover .p-inputswitch-slider {
+
+      &::before {
+        background-color: var(--color-white);
+      }
+    }
+  }
+
+  &.p-disabled {
+    opacity: 1;
+
+    .p-inputswitch-slider {
+      background-color: var(--color-gray-50);
+    }
+
+    &.p-inputswitch-checked {
+      .p-inputswitch-slider {
+
+        &::before {
+          background-color: var(--color-white-60);
+        }
+      }
+    }
+  }
+
+  &.p-focus {
+    .p-inputswitch-slider {
+      outline: 0 none;
+      outline-offset: 0;
+    }
+  }
+
+  &:not(.p-disabled):hover .p-inputswitch-slider {
+    background-color: var(--color-gray-50);
+  }
+}

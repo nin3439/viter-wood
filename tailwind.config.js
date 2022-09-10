@@ -137,8 +137,8 @@ module.exports = {
       boxShadow: {
         "focus-active": "inset 0px 0px 0px 2px #5063D5",
         focus: "0px 0px 0px 4px rgba(58, 74, 183, 0.15)",
-        "popup-dialog":
-          "0px 0px 0px 1px rgba(0, 0, 0, 0.06), 0px 16px 32px rgba(0, 0, 0, 0.2)",
+        "popup-card": "0px 8px 16px rgba(0, 0, 0, 0.2)",
+        "popup-dialog": "0px 16px 32px rgba(0, 0, 0, 0.2)",
         none: "none",
       },
       backgroundColor: (theme) => ({

@@ -1,0 +1,22 @@
+.p-component.p-overlaypanel {
+  min-width: 240px;
+  @apply  bg-white shadow-popup-dialog rounded-lg;
+
+  &::before {
+    @apply hidden;
+  }
+
+  &::after {
+    @apply bg-transparent text-transparent;
+    width: 12px;
+    height: 12px;
+    margin-bottom: -6px;
+    border-right: none;
+    border-bottom: none;
+    transform: rotate(45deg);
+  }
+
+  .p-overlaypanel-content {
+    padding: 0;
+  }
+}

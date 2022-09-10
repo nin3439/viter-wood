@@ -1,0 +1,36 @@
+/* stylelint-disable */
+
+.p-slider {
+  background: var(--color-gray-100);
+}
+
+.p-slider.p-slider-horizontal {
+  height: 4px;
+}
+
+.p-slider.p-slider-horizontal .p-slider-handle {
+  margin-top: -8px;
+  margin-left: -8px;
+}
+
+.p-slider.p-slider-vertical {
+  width: 4px;
+}
+
+.p-slider.p-slider-vertical .p-slider-handle {
+  margin-left: -8px;
+  margin-bottom: -8px;
+}
+
+.p-slider .p-slider-handle {
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.p-slider .p-slider-handle:focus {
+  outline: 0 none;
+  outline-offset: 0;
+}
+

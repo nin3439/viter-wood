@@ -1,0 +1,57 @@
+.p-toast {
+  @apply opacity-100;
+}
+
+.p-toast .p-toast-message {
+  @apply rounded-lg bg-white text-black py-3 px-5 text-base shadow-2xl mb-1;
+}
+
+.p-toast .p-toast-message .p-toast-message-content {
+  @apply items-center;
+}
+
+.p-toast .p-toast-message .p-toast-message-content .p-toast-message-icon {
+  @apply rounded-full block text-black mr-3 p-1 flex-shrink-0;
+}
+
+.p-toast .p-toast-message .p-toast-message-content .p-toast-summary {
+  @apply block font-medium mb-1;
+
+  &:empty {
+    @apply mb-0;
+  }
+}
+
+.p-toast .p-toast-message .p-toast-icon-close {
+  @apply w-5 h-5 block text-gray-500 flex-shrink-0;
+}
+
+.p-toast .p-toast-message .p-toast-icon-close:focus {
+  outline: none;
+  outline-offset: 0;
+  box-shadow: none;
+}
+
+.p-toast .p-toast-message.p-toast-message-info .p-toast-message-icon {
+  @apply bg-info-500;
+
+  &::before {
+    content: "\e923";
+  }
+}
+
+.p-toast .p-toast-message.p-toast-message-success .p-toast-message-icon {
+  @apply bg-success-400;
+}
+
+.p-toast .p-toast-message.p-toast-message-warn .p-toast-message-icon {
+  @apply bg-warning-500;
+
+  &::before {
+    content: "\e923";
+  }
+}
+
+.p-toast .p-toast-message.p-toast-message-error .p-toast-message-icon {
+  @apply bg-danger-500;
+}

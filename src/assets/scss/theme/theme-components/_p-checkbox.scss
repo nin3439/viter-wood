@@ -1,0 +1,73 @@
+/* stylelint-disable */
+
+.p-field-checkbox.p-error .p-checkbox-box,
+.p-field-checkbox.p-invalid .p-checkbox-box {
+  @apply border-danger-500
+}
+
+.p-checkbox {
+  width: 20px;
+  height: 20px;
+
+  &.p-checkbox-disabled {
+    cursor: default;
+
+    & + label {
+      pointer-events: none;
+    }
+  }
+
+  &:not(.p-checkbox-disabled) .p-checkbox-box {
+    &:hover {
+      @apply border-gray-600 bg-black-5;
+    }
+    &.p-focus {
+      outline: 0 none;
+      outline-offset: 0;
+    }
+    &.p-highlight {
+      @apply bg-key-500 border-key-500;
+    }
+
+    &.p-highlight:hover {
+      @apply bg-key-700 text-white border-key-700;
+    }
+  }
+
+  .p-checkbox-box {
+    border: 1px solid #D2D2D2;
+    background: #ffffff;
+    width: 20px;
+    height: 20px;
+    color: #ffffff;
+    border-radius: 4px;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+
+    .p-checkbox-icon {
+      transition-duration: 0.2s;
+      font-size: 12px;
+      font-weight: bold;
+    }
+  }
+  .p-checkbox-box {
+    border: 1px solid #D2D2D2;
+    background: #ffffff;
+    width: 20px;
+    height: 20px;
+    color: #ffffff;
+    border-radius: 4px;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+  }
+}
+
+.p-input-filled {
+  .p-checkbox {
+    .p-checkbox-box {
+      background-color: #faf9f8;
+    }
+
+    &:not(.p-checkbox-disabled) .p-checkbox-box:hover {
+      background-color: #faf9f8;
+    }
+  }
+}

@@ -1,15 +1,17 @@
 <template>
-  <div class="flex ">
-    <div class="bg-danger-500">bla</div>
-    <InputText v-model="value" type="text" />
-  </div>
+
+ <Header></Header>
+  <main class="p-8 pt-0">
+
+  </main>
 </template>
 
 <script setup>
 import { ref } from "vue";
-import InputText from "primevue/inputtext";
+import Header from "@/components/Header";
 
-const value = ref("bla");
+
+
 </script>
 
 <style></style>

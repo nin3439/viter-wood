@@ -6,3 +6,7 @@
 @import './src/assets/scss/theme/primevue';
 
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600&display=swap');
+
+* {
+  @apply text-brown-900;
+}

@@ -1573,7 +1573,7 @@
   color: #000000;
   border-radius: 6px;
   border-color: #fff;
-  @apply shadow-popup-card hover:shadow-popup-dialog
+  @apply shadow-card hover:shadow-hover-card hover:cursor-pointer;
 }
 
 .p-card .p-card-body {

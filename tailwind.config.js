@@ -49,6 +49,11 @@ module.exports = {
           800: "#505050",
           900: "#282828",
         },
+        brown: {
+          200: "#84746c",
+          500: "#6c645c",
+          900: "#424141",
+        },
         key: {
           50: "#F2F4FE",
           100: "#DDE3FC",
@@ -61,6 +66,13 @@ module.exports = {
           700: "#283599",
           800: "#19237B",
           900: "#0F1666",
+        },
+        sea: {
+          300: "#54a4b4",
+          400: "#6ca8a0",
+          500: "#4c878f",
+          700: "#446c6c",
+          900: "#3c646c",
         },
         success: {
           50: "#E7FDEB",
@@ -137,7 +149,9 @@ module.exports = {
       boxShadow: {
         "focus-active": "inset 0px 0px 0px 2px #5063D5",
         focus: "0px 0px 0px 4px rgba(58, 74, 183, 0.15)",
-        "popup-card": "0px 8px 16px rgba(0, 0, 0, 0.2)",
+        "card": "0px 0px 0px 1px rgba(65, 65, 65, 0.06)",
+        "hover-card":
+          "0px 0px 0px 1px rgba(65, 65, 65, 0.06), 0px 8px 8px rgba(0, 0, 0, 0.2)",
         "popup-dialog": "0px 16px 32px rgba(0, 0, 0, 0.2)",
         none: "none",
       },
